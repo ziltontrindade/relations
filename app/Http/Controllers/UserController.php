@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function findOne(Request $r){
         $user = User::find($r->id);
-        return $user;
+        return $user->address;
     }
 
     public function insert(Request $r){
@@ -23,7 +23,7 @@ class UserController extends Controller
         $user = User::create($rawData);
 
         return $user;
-        
+
     }
 }
 
