@@ -15,7 +15,10 @@ return new class extends Migration
     {
         Schema::table('users', function (Blueprint $table) {
 
-            $table->foreign('address_id')->references('id')->on('addresses');
+            $table->foreign('address_id')
+            ->references('id')
+            ->on('addresses')
+            ->onDelete('SET NULL');
         });
     }
 
@@ -27,7 +30,7 @@ return new class extends Migration
     public function down()
     {
         Schema::table('users', function (Blueprint $table) {
-            //
+            $table->dropForeign('address_id');
         });
     }
 };
