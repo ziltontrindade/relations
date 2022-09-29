@@ -28,10 +28,6 @@ class User extends Authenticatable
      *
      * @var array<int, string>
      */
-    protected $hidden = [
-        'password',
-        'remember_token',
-    ];
 
     /**
      * The attributes that should be cast.
@@ -41,6 +37,13 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    protected $hidden = [
+        'password',
+        'remember_token',
+        'address_id'
+    ];
+
 
     public function address(){
         return $this->hasOne(Address::class, 'id','address_id');
