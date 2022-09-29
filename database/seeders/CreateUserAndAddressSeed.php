@@ -24,8 +24,7 @@ class CreateUserAndAddressSeed extends Seeder
         ]);
 
         DB::table('addresses')->insert([
-            "address" => "Rua das treta, nº 666"
-	     
+            "address" => "Rua das treta, nº 666"     
 	       
         ]);
     }
